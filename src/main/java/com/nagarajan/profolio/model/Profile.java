@@ -8,7 +8,6 @@ import java.util.Map;
 @Data
 @Document(collection = "profile")
 public class Profile {
-
     @Id
     private String id;
     private String name;
@@ -18,5 +17,6 @@ public class Profile {
     private String resumeUrl;
     private String location;
     private String email;
+    private String phone;
     private Map<String, String> socialLinks;
 }
