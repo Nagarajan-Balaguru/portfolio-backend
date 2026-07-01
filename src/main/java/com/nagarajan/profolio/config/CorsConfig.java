@@ -13,6 +13,7 @@ public class CorsConfig {
     public CorsWebFilter corsWebFilter() {
         CorsConfiguration config = new CorsConfiguration();
         config.addAllowedOrigin("http://localhost:5173");
+        config.addAllowedOrigin("https://portfolio-frontend-navy-phi.vercel.app");
         config.addAllowedMethod("*");
         config.addAllowedHeader("*");
 
