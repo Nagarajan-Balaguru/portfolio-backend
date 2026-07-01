@@ -18,4 +18,6 @@ public class Project {
     private String thumbnail;
     private boolean featured;
     private int order;
+    private String category;
+    private String company;
 }

@@ -3,6 +3,9 @@ package com.nagarajan.profolio.model;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import java.time.Instant;
 
 @Data
@@ -10,9 +13,19 @@ import java.time.Instant;
 public class ContactMessage {
     @Id
     private String id;
+
+    @NotBlank(message = "Name is required")
+    @Size(min = 2, max = 50, message = "Name must be between 2 and 50 characters")
     private String name;
+
+    @NotBlank(message = "Email is required")
+    @Email(message = "Please provide a valid email address")
     private String email;
+
+    @NotBlank(message = "Message is required")
+    @Size(min = 10, max = 1000, message = "Message must be between 10 and 1000 characters")
     private String message;
+
     private Instant timestamp;
     private boolean read;
 }
